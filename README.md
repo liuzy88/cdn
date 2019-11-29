@@ -1,28 +1,37 @@
-# 文件上传客户端
+# CDN文件上传客户端
 
 ## 用途
-- 命令行上传文件到七牛存储，支持linux, mac, windows
 
-## 试用
-- 你可以从我的CDN下载此程序
-- [下载Linux x64](http://upload.liuzy88.com/cli-linux)
-- [下载Mac x64](http://upload.liuzy88.com/cli-macos)
-- [下载Windows x64](http://upload.liuzy88.com/cli-win.exe)
+- 命令行上传文件到七牛云存储
 
-## 示例
-- Windows下执行
-```
-D:\cdn-cli>cli-win.exe
+## 使用此工具
+
+```bash
+# 下载Linux x64版
+wget http://upload.liuzy88.com/cli-linux
+# 下载Mac x64版
+wget http://upload.liuzy88.com/cli-macos
+# 下载Windwos x64版
+wget http://upload.liuzy88.com/cli-win.exe
+
+# 执行
+> ./cli-linux
 Please input password!
 > ***********
 Please input file path!
-> cli.js
-Upload cli.js to CDN...
-{ hash: 'FjUaiYkTZiDriZBRPfb-dIx1yKSl', key: 'cli.js' }
+> README.md
+Upload README.md to CDN...
+{ hash: 'FjUaiYkTZiDriZBRPfb-dIx1yKSl', key: 'README.md' }
 Upload success!
 
 You can use this link to download the file:
-http://upload.liuzy88.com/cli.js?_=1565836014397
+http://upload.liuzy88.com/README.md?_=1565936014397
 
-D:\cdn-cli>
 ```
+
+## 做自己工具
+
+- 登陆自己的七牛云存储，查看参数
+- 新建`conf_me.js`文件，参照`conf.js`填入明文件
+- 执行`node conf_util.js`加密参数到`conf.js`
+- 执行`pkg index.js`打包为可执行文件
